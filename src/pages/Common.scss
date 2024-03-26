@@ -1,0 +1,146 @@
+.login-parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+body,
+html,
+#root {
+    height: 100%;
+}
+
+
+.log-sub-child {
+    height: 100%;
+    width: 300px;
+    text-align: center;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    border-radius: 15px;
+
+    >h3 {
+        font-weight: bold;
+    }
+
+    >input,
+    .ant-input-outlined {
+        height: 40px;
+        margin-bottom: 15px;
+        border: 0px;
+        border-bottom: 1px solid;
+        border-radius: 0px;
+        outline: 0;
+
+        &:focus,
+        &:focus-within {
+            box-shadow: none;
+        }
+    }
+
+    >button {
+        background: rgb(25 26 28 / 67%);
+        color: #fff;
+        font-weight: 500;
+        margin-top: 20px;
+
+        &:hover {
+            color: #fff !important;
+            border-color: rgb(25 26 28 / 67%) !important;
+            background: rgb(25 26 28 / 67%) !important;
+        }
+    }
+}
+
+
+.icons-div {
+    display: flex;
+    align-items: center;
+
+    >span {
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+      >svg{
+        color:#fff;
+        font-size: 12px;
+        padding: 4px;
+     
+      }
+
+    }
+    .view{
+        background-color: #7d7dec;
+        margin-right: 10px;
+    }
+    .edit{
+        background-color: #4d8f4d;
+        margin-right: 10px;
+    }
+    .delete{
+        background-color: #e96c6c;
+    }
+
+}
+
+.table-parent{
+    margin:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+    .ant-pagination{
+        >li button,a,.ant-pagination-disabled{
+        border: 1px solid grey !important;
+        border-radius: 7px !important;
+        }
+       .ant-pagination-item-active{
+            border:1px solid #1677ff !important;
+            color:#333 !important;
+            >a{
+                border:0px solid #1677ff !important; 
+            }
+        }
+
+    }
+}
+
+
+.modal-input{
+    >div input{
+        margin-bottom: 10px;
+        height:40px;
+    }
+}
+
+.ant-modal-title{
+    text-align: center;
+    font-weight: bold;
+}
+
+*{
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.serch-cont{
+    // width:100%;
+    margin-left:450px;
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    >div{
+    width:max-content;
+    display: flex;
+
+    margin-bottom: 20px;
+    button{
+        margin-left: 10px;
+        background-color: #0f6ee2;
+        color:#fff
+    }
+}
+}
