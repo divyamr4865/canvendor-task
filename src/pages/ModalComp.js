@@ -37,6 +37,8 @@ export default function ModalComp(props) {
         }))
     }
 
+   
+
     const UpdateApi=()=>{
         axios({
             method: "PUT",

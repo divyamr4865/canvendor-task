@@ -1,4 +1,4 @@
-import { Table, notification,Button } from 'antd'
+import { Table, notification, Button } from 'antd'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import ModalComp from './ModalComp'
@@ -9,6 +9,7 @@ export default function TableComp() {
     const [products, setproducts] = useState([])
     const [filterData, setfilterData] = useState([])
     const [title, setTitle] = useState("")
+
     const [Modelopen, setModelopen] = useState(false)
     const Columns = [
         {
@@ -103,36 +104,38 @@ export default function TableComp() {
     const UpdateData = (res) => {
         rowsData.forEach((val, index) => {
             if (val.id === res?.data?.id) {
-                Object.keys(res?.data).map((key)=>{
-               rowsData[index][key] = res?.data[key]     
+                Object.keys(res?.data).map((key) => {
+                    rowsData[index][key] = res?.data[key]
                 })
-           
+
             }
         })
 
-        setRowsData((prev)=>[...prev])
+        setRowsData((prev) => [...prev])
 
         notification.success({
-            message:"Products Edited Successfully"
+            message: "Products Edited Successfully"
         })
 
     }
 
 
 
+
+
     return (
         <>
-        
-        <div className='table-parent'>
-       <div className='serch-cont'> 
-       <div>
-       <InputComp type="text" placeholder={"Search...."}/><Button>Search</Button>
-       </div>
-       </div>
 
-            <Table columns={Columns} dataSource={products} bordered />
-            <ModalComp open={Modelopen} title={title} FilterData={filterData} onClose={() => setModelopen(false)} CallBackFun={(val) => UpdateData(val)} />
-        </div>
+            <div className='table-parent'>
+                <div className='serch-cont'>
+                    <div>
+                        <InputComp type="text" placeholder={"Search...."} /><Button>Search</Button>
+                    </div>
+                </div>
+
+                <Table columns={Columns} dataSource={products} bordered />
+                <ModalComp open={Modelopen} title={title} FilterData={filterData} onClose={() => setModelopen(false)} CallBackFun={(val) => UpdateData(val)} />
+            </div>
         </>
 
     )
